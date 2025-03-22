@@ -1,0 +1,578 @@
+/* 全局 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Microsoft JhengHei", sans-serif;
+}
+
+body {
+  background-color: #f8f9fa;
+}
+
+/* navbar */
+.navbar {
+  background-color: #0066cc;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 3%;
+  max-width: 1600px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.navbar-logo {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-logo img {
+  height: 40px;
+  margin-right: 10px;
+}
+
+.navbar-logo h1 {
+  color: white;
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.navbar-menu {
+  display: flex;
+  list-style: none;
+}
+
+.navbar-item {
+  margin-left: 30px;
+}
+
+.navbar-link {
+  color: white;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 500;
+  padding: 5px 10px;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.navbar-link:hover,
+.navbar-link.active {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* 圖片 */
+.banner {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+}
+
+.banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.banner-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+.banner-overlay h2 {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.banner-overlay p {
+  font-size: 1.2rem;
+  max-width: 700px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* sections */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+section {
+  padding: 60px 0;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.section-header h2 {
+  font-size: 2.2rem;
+  color: #0066cc;
+  margin-bottom: 15px;
+}
+
+.underline {
+  height: 4px;
+  width: 70px;
+  background-color: #0066cc;
+  margin: 0 auto;
+}
+
+/* 必修 */
+.courses-section {
+  background-color: #ffffff;
+  padding: 70px 0;
+}
+
+.courses-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.course-table-container {
+  width: 100%;
+  overflow-x: auto;
+  margin-top: 20px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.course-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: white;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.course-table th,
+.course-table td {
+  padding: 15px 20px;
+  text-align: left;
+  border-bottom: 1px solid #eaeaea;
+}
+
+.course-table th {
+  background-color: #0066cc;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.course-table th:first-child {
+  width: 20%;
+}
+
+.course-table tr:last-child td {
+  border-bottom: none;
+}
+
+.course-table tr:hover {
+  background-color: #f8f9fa;
+}
+
+.year-cell {
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: #0066cc;
+  background-color: rgba(0, 102, 204, 0.05);
+}
+
+.course-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 20px;
+  margin: 0;
+  padding: 0;
+}
+
+.course-list li {
+  padding: 6px 15px;
+  background-color: #f0f7ff;
+  border-radius: 20px;
+  color: #0052a5;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.course-list li:hover {
+  background-color: #0066cc;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* 選修 */
+.elective-courses-section {
+  background-color: #f5f7fa;
+  padding: 70px 0;
+}
+
+.elective-content {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.elective-category {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.elective-category:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 102, 204, 0.15);
+}
+
+.category-header {
+  background-color: #0066cc;
+  color: white;
+  padding: 15px 20px;
+}
+
+.category-header h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.elective-courses {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20px;
+  gap: 12px;
+}
+
+.elective-course {
+  padding: 8px 16px;
+  background-color: #f0f7ff;
+  border-radius: 20px;
+  color: #0052a5;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.elective-course:hover {
+  background-color: #0066cc;
+  color: white;
+  transform: translateY(-3px);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* 師資介紹 */
+.faculty-section {
+  background-color: #ffffff;
+  padding: 70px 0;
+}
+
+.faculty-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 30px;
+  margin-top: 20px;
+}
+
+.professor-card {
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.professor-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 25px rgba(0, 102, 204, 0.15);
+}
+
+.professor-image {
+  width: 100%;
+  height: 350px;
+  overflow: hidden;
+}
+
+.professor-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.professor-card:hover .professor-image img {
+  transform: scale(1.05);
+}
+
+.professor-info {
+  padding: 20px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.professor-name {
+  color: #0066cc;
+  font-size: 1.4rem;
+  margin-bottom: 5px;
+}
+
+.professor-title {
+  color: #555;
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.professor-details {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.professor-education {
+  color: #333;
+  font-size: 0.95rem;
+  margin-bottom: 15px;
+  line-height: 1.4;
+}
+
+.professor-expertise {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: auto;
+}
+
+.professor-expertise span {
+  background-color: #f0f7ff;
+  color: #0052a5;
+  padding: 3px 10px;
+  border-radius: 15px;
+  font-size: 0.85rem;
+  transition: all 0.3s ease;
+}
+
+.professor-expertise span:hover {
+  background-color: #0066cc;
+  color: white;
+}
+
+.professor-expertise a {
+  background-color: #f0f7ff;
+  color: #0052a5;
+  padding: 3px 10px;
+  border-radius: 15px;
+  font-size: 0.85rem;
+  transition: all 0.3s ease;
+}
+
+/* Footer 樣式 */
+.footer {
+  background-color: #0052a5;
+  color: white;
+  padding: 50px 0 20px;
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: space-between;
+}
+
+.footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.footer-logo img {
+  height: 60px;
+}
+
+.footer-name h3 {
+  font-size: 1.4rem;
+  margin-bottom: 5px;
+}
+
+.footer-name h4 {
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+
+.footer-info {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.contact-info p {
+  margin-bottom: 10px;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.contact-info p i {
+  margin-right: 10px;
+  font-size: 1.1rem;
+}
+
+.copyright {
+  margin-top: 20px;
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+/* RWD */
+@media screen and (max-width: 768px) {
+  .navbar-container {
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .navbar-menu {
+    margin-top: 15px;
+  }
+
+  .navbar-item {
+    margin-left: 15px;
+    margin-right: 15px;
+  }
+
+  .banner {
+    height: 200px;
+  }
+
+  .banner-overlay h2 {
+    font-size: 1.8rem;
+  }
+
+  .banner-overlay p {
+    font-size: 1rem;
+  }
+
+  section {
+    padding: 40px 0;
+  }
+
+  .section-header h2 {
+    font-size: 1.8rem;
+  }
+
+  .course-table th,
+  .course-table td {
+    padding: 12px 15px;
+  }
+
+  .course-table th {
+    font-size: 1.1rem;
+  }
+
+  .year-cell {
+    font-size: 1.1rem;
+  }
+
+  .course-list {
+    gap: 6px 10px;
+  }
+
+  .course-list li {
+    padding: 5px 10px;
+    font-size: 0.9rem;
+  }
+
+  .footer {
+    padding: 30px 0 20px;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .footer-logo img {
+    height: 50px;
+  }
+
+  .footer-name h3 {
+    font-size: 1.2rem;
+  }
+
+  .footer-name h4 {
+    font-size: 1rem;
+  }
+
+  .category-header h3 {
+    font-size: 1.1rem;
+  }
+
+  .elective-courses {
+    padding: 15px;
+    gap: 8px;
+  }
+
+  .elective-course {
+    padding: 6px 12px;
+    font-size: 0.9rem;
+  }
+
+  .faculty-content {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+  }
+
+  .professor-image {
+    height: 350px;
+  }
+
+  .professor-name {
+    font-size: 1.2rem;
+  }
+
+  .professor-title {
+    font-size: 1rem;
+  }
+
+  .professor-education {
+    font-size: 0.9rem;
+  }
+
+  .professor-expertise span {
+    font-size: 0.8rem;
+    padding: 2px 8px;
+  }
+}
